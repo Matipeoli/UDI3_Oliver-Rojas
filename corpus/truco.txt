@@ -1,0 +1,193 @@
+REGLAMENTO DEL TRUCO Y SUS VARIANTES POR PAÍS
+
+TÍTULO I — ALCANCE Y FUENTES
+
+Artículo 1. Qué cubre este reglamento
+Este reglamento describe el truco argentino (también llamado truco gaucho, gaudério o cego en el sur de Brasil) en detalle, y resume las variantes de otros países: Uruguay, Brasil (truco paulista y truco mineiro), Paraguay, Venezuela y el truc de España (Cataluña, Valencia y Baleares). Salvo que se indique otro país, "el truco" significa el truco argentino. El truco es un juego de cartas originario de Valencia y las Islas Baleares, derivado del truc, y es popular en Sudamérica e Italia.
+
+Artículo 2. Fuentes y límites del reglamento
+Las reglas provienen de divulgación y sitios de juegos (Pagat, Wikipedia, Sitio Andino y Focus Gaming News), no de una federación oficial. Las reglas varían de una región a otra y de una mesa a otra, sobre todo las señas, la flor, la contraflor al resto y el envido, por lo que conviene acordarlas antes de empezar. No hay información en este reglamento sobre las variantes de Chile, Bolivia, Perú ni Italia, ni sobre el Truc y Flou, ni sobre el truco gaúcho de Rio Grande do Sul más allá de que comparte reglas con el argentino.
+
+TÍTULO II — EL TRUCO ARGENTINO: MAZO, JUGADORES Y REPARTO
+
+Artículo 3. El mazo
+Se juega con la baraja española de 40 cartas: palos de oros, copas, espadas y bastos, con las cartas del 1 al 7 y las figuras 10 (sota), 11 (caballo) y 12 (rey). No se usan los ochos, los nueves ni los comodines. A las figuras se las llama "las negras" y valen cero en el envido y la flor.
+
+Artículo 4. Cantidad de jugadores y equipos
+Lo habitual es jugar de a cuatro, en dos parejas fijas sentadas enfrentadas. También se juega de a dos (mano a mano, sin parejas) y de a seis (dos equipos de tres, sentados alternados). Las parejas se acuerdan o se forman "sacando reyes": se reparte de a una carta y los dos primeros que reciban un rey son compañeros; el primero que saca rey es el primer repartidor.
+
+Artículo 5. Reparto y sentido del juego
+El repartidor da tres cartas a cada jugador, de a una, en sentido contrario a las agujas del reloj. El jugador que está sentado a la derecha del repartidor se llama "mano" y abre la primera baza. El último en jugar de cada pareja se llama "pie". El repartidor rota a la derecha después de cada mano. En las mesas de cuatro, el pie suele actuar como capitán de la pareja, decidiendo apuestas según las señas del compañero.
+
+Artículo 6. Cuántos puntos se juegan: malas y buenas
+Se gana al llegar a 30 puntos o más. Los primeros 15 puntos se llaman "malas" y los siguientes 15 (del 16 al 30) se llaman "buenas". Por ejemplo, 12 puntos son "12 malas" y 18 puntos son "3 buenas". Esta terminología es tradicional y no afecta el juego. Es habitual jugar al mejor de tres partidas, o una sola partida a 30 ("un 30 seco"). El tanteador tradicional usa porotos, fósforos, piedras o monedas.
+
+Artículo 7. En qué orden se anotan los puntos
+En cada mano, primero se suman los puntos de la flor y del envido, y recién después los del truco. Si la flor o el envido llevan a un equipo a 30 puntos, ese equipo gana la partida y el truco ya no importa. Algunas mesas suman todo al final de la mano, lo que permite empates.
+
+TÍTULO III — LAS CARTAS Y LAS BAZAS
+
+Artículo 8. Jerarquía de las cartas en el truco
+De mayor a menor: el 1 de espada (ancho de espadas, "macho"), el 1 de basto (ancho de bastos), el 7 de espada (siete bravo), el 7 de oro (siete bravo), todos los 3, todos los 2, el 1 de copa y el 1 de oro (anchos falsos), todos los 12 (reyes), todos los 11 (caballos), todos los 10 (sotas), el 7 de copa y el 7 de basto (sietes falsos), todos los 6, todos los 5 y todos los 4. Entre las cartas comunes solo importa el número, no el palo: todos los 3 valen lo mismo. Las cuatro más altas se llaman cartas bravas.
+
+Artículo 9. Cómo se juega una baza
+Cada mano se compone de hasta tres bazas (también llamadas vueltas o rondas). Sale el mano y los demás juegan en sentido antihorario. No hay obligación de seguir el palo ni de jugar la carta más alta. Las cartas quedan boca arriba sobre la mesa. Gana la baza la carta más alta, sin importar el palo, y quien la ganó sale en la baza siguiente.
+
+Artículo 10. Parda: cuando hay empate de cartas
+Si las cartas más altas de una baza son de equipos contrarios y tienen igual valor, la baza queda empatada y se llama "parda": no es de nadie, y vuelve a salir quien salió en la baza anterior. Si las cartas más altas iguales pertenecen al mismo equipo, ese equipo gana la baza, y sale el que jugó primero la carta más alta.
+
+Artículo 11. Quién gana el truco: dos de tres bazas
+Cuando no se cantó nada, el truco vale 1 punto y lo gana el equipo que gana la mayoría de las bazas (dos de tres). Si una baza fue parda, gana quien gane la primera de las otras dos. Si dos fueron pardas, gana quien ganó la baza que no fue parda. Si las tres fueron pardas, gana el equipo del mano. Si alguna de las dos primeras bazas es parda y se define, no hace falta jugar la tercera.
+
+Artículo 12. Cartas boca abajo y cartas expuestas
+Las cartas jugadas no pueden recogerse. Se puede jugar una carta boca abajo para esconder su valor; si los dos integrantes de una pareja ponen sus cartas boca abajo en la mesa, eso equivale a decir "no quiero" al truco. Si solo uno lo hace, no se retiró la pareja. En el juego de seis, el rechazo requiere que los tres integrantes del equipo pongan sus cartas boca abajo.
+
+TÍTULO IV — EL TRUCO: TRUCO, RETRUCO Y VALE CUATRO
+
+Artículo 13. Cantar truco
+Cualquier jugador puede cantar "truco" en cualquier momento, con lo que la mano pasa a valer 2 puntos. Cualquiera del equipo contrario responde. Si dice "quiero", el truco vale 2 puntos. Si dice "no quiero", abandona la mano y el equipo que cantó gana 1 punto. Cada apuesta de truco debe aceptarse explícitamente con la palabra "quiero".
+
+Artículo 14. Retruco y vale cuatro
+El equipo que aceptó el truco puede cantar "retruco" en cualquier momento posterior, y la mano pasa a valer 3 puntos. Si el rival no quiere, el equipo que cantó el retruco gana 2 puntos. A su vez, el equipo que aceptó el retruco puede cantar "vale cuatro", que es el tope: la mano vale 4 puntos. Si el rival no quiere el vale cuatro, el que lo cantó gana 3 puntos. Solo puede subir la apuesta quien recibió el último canto: nadie puede subirse a sí mismo.
+
+Artículo 15. Tabla de puntos del truco
+Truco no querido: 1 punto para quien cantó. Retruco no querido: 2 puntos. Vale cuatro no querido: 3 puntos. Truco querido y ganado: 2 puntos. Retruco querido y ganado: 3 puntos. Vale cuatro querido y ganado: 4 puntos. Si no se cantó nada, la mano vale 1 punto.
+
+Artículo 16. Cómo se responde y se sube: "quiero retruco"
+Para subir la apuesta hay que aceptar antes: ante un truco, la respuesta correcta es "quiero retruco". Si se dice solo "retruco" sin "quiero" antes, la apuesta no vale. En el envido, en cambio, decir "quiero, envido" no sube la apuesta: el "quiero" la cierra y la segunda palabra se ignora. Jugar una carta mientras hay un truco pendiente no significa aceptarlo: se puede decir "quiero" o "no quiero" después.
+
+Artículo 17. Irse al mazo
+Un jugador puede abandonar la mano diciendo "me voy al mazo". Entrega al equipo rival los puntos que estén en juego en ese momento. Si no se había cantado nada, el rival gana 1 punto, más los puntos de envido o flor que hubieran quedado sin resolver.
+
+TÍTULO V — EL ENVIDO
+
+Artículo 18. Cómo se calcula el envido
+El envido es la suma de dos cartas del mismo palo más 20 puntos. Las figuras (10, 11 y 12) valen 0 y las demás cartas valen su número. Si no hay dos cartas del mismo palo, el envido es el valor de la carta más alta, contando las figuras como 0. El máximo es 33 (un 7 y un 6 del mismo palo) y el mínimo es 0 (tres figuras de palos distintos). Ejemplo: 6, 3 y 2 del mismo palo suman 29 (6 + 3 + 20). Ejemplo: 7 de copa, 3 de copa y 4 de basto suman 30.
+
+Artículo 19. Cuándo se puede cantar el envido
+El envido se canta durante la primera baza, antes de jugar la primera carta o al tirarla. No se puede hacer la primera apuesta de envido una vez jugada la primera carta, ni después de haber cantado o aceptado un truco. Es opcional: se puede saltear e ir directo al truco. Si alguien tiene flor, no se puede apostar ni puntuar el envido.
+
+Artículo 20. Tipos de envido
+"Envido" propone que valga 2 puntos. "Real envido" propone que valga 3 puntos. "Falta envido" propone que valga los puntos que le faltan al equipo que va ganando para terminar la partida. Si nadie canta envido, no hay puntos de envido. Cualquier jugador puede cantarlo o responderlo en nombre de su equipo.
+
+Artículo 21. Cómo se responde y se encadena el envido
+Ante un envido se puede responder "quiero" (acepta y cierra), "no quiero" (rechaza y cierra), o subir: "envido" (sube 2), "real envido" (sube 3) o "falta envido". Un envido se puede subir con envido o real envido; un real envido solo se puede subir con real envido o falta envido, no con envido. El falta envido no se puede subir: solo se responde quiero o no quiero. Se pueden encadenar varios envidos y después varios reales envidos.
+
+Artículo 22. Tabla de puntos del envido
+Envido querido: 2 puntos. Real envido querido: 3. Envido más envido: 4 si se quiere, 2 si no se quiere. Envido más real envido: 5 si se quiere, 2 si no se quiere. Envido, envido y envido: 6 si se quiere, 4 si no. Envido, envido y real envido: 7 si se quiere, 4 si no. Envido, real envido y real envido: 8 si se quiere, 5 si no. Falta envido querido: los puntos que le faltan al líder. El falta envido puede valer poco si el líder está cerca de ganar.
+
+Artículo 23. Envido no querido
+Si el rival responde "no quiero" a la primera apuesta de envido, quien cantó gana 1 punto. Si hubo varias apuestas encadenadas, quien cantó gana los puntos de la última apuesta que sí se aceptó, es decir, la del canto anterior al rechazado. Ejemplo: envido, real envido y real envido, y el último se rechaza: gana 5 puntos (2 + 3).
+
+Artículo 24. Quién gana el envido y cómo se cantan los tantos
+Si se quiere, los jugadores dicen sus tantos empezando por el mano y siguiendo en sentido antihorario. Gana el tanto más alto. Quien tiene un tanto más bajo que uno ya cantado puede decir "son buenas", admitiendo que perdió sin revelar su cantidad. Si el compañero ya cantó el tanto más alto no hace falta cantar el propio. Las cartas del envido ganador se muestran al final de la baza.
+
+Artículo 25. Empate en el envido
+Si dos tantos son iguales, gana el que está más cerca del mano en el orden de juego antihorario. Es decir, el mano gana todos los empates y el repartidor los pierde. Ejemplo: si el repartidor es Este, el orden de prioridad es Norte, Oeste, Sur y por último Este.
+
+Artículo 26. El envido está primero
+Si alguien cantó truco y otro jugador quiere cantar envido (o flor) antes de responder, puede hacerlo: el envido se resuelve antes que el truco y se responde "el envido está primero". Después de resolver el envido, se responde el truco. El orden lógico de las apuestas es flor, envido, truco.
+
+TÍTULO VI — LA FLOR
+
+Artículo 27. Qué es la flor
+La flor es tener las tres cartas del mismo palo. Cuando el reglamento acordado incluye la flor, el jugador que la tiene debe cantarla; no está permitido cantar flor sin tenerla, y es la única jugada que debe ser honesta. La flor se canta antes de jugar la primera carta y antes de hacer o aceptar otras apuestas. Una flor cancela cualquier envido ya cantado, y las apuestas de truco quedan en suspenso hasta resolver la flor.
+
+Artículo 28. Valor de la flor y puntos
+La flor vale 20 puntos más la suma de las tres cartas, contando las figuras como 0. La mejor flor es 5, 6 y 7 del mismo palo, con 38. Ejemplos: 4, 10 y 12 suman 24; 2, 3 y 10 suman 25; 1, 3 y 5 suman 29; 1, 5 y 11 de espadas suman 26. Si solo un equipo tiene flor, gana 3 puntos por cada flor cantada y no hay apuesta posible. Si ambos equipos tienen flor, gana el tanto más alto; el empate lo gana quien está antes en el orden desde el mano.
+
+Artículo 29. Responder a una flor: me achico, contraflor y al resto
+Cuando el rival canta flor y uno también tiene, puede decir "flor" (se comparan los tantos), "con flor me achico" (admite que pierde: el equipo rival suma 3 por cada flor suya más 1 punto por el achique), "contraflor" (desafía al rival a hablar de nuevo) o "contraflor al resto" (apuesta lo que le falta al líder para ganar más 3 por cada flor). Ante una contraflor se puede responder "con flor quiero", "con flor me achico" o "contraflor al resto". Ante una contraflor al resto solo se puede decir "con flor quiero" o "con flor me achico".
+
+Artículo 30. Puntos de contraflor y contraflor al resto
+Flor contra la que se dice "con flor me achico": el equipo que cantó gana 4 puntos (3 por la flor y 1 por el achique). Contraflor querida: gana 6 puntos según una fuente (otra indica que cada flor vale 3). Contraflor al resto querida: el ganador suma los puntos que le faltaban al equipo que va ganando, más 3 por cada flor; si el que va ganando tiene la mejor flor, gana la partida. Algunas mesas, si ambos equipos están en malas, limitan el resto a lo que falta para llegar a 15.
+
+Artículo 31. Pedir flor y flor tapada
+Al final de la mano, quien sospeche que un rival tenía flor y no la cantó puede decir "pido flor". Si el rival tenía flor, el equipo que pide gana 3 puntos. Si el rival muestra dos cartas de palos distintos, prueba de que no tenía flor, su equipo gana 1 punto. No cantar una flor que se tiene se llama "flor tapada" y es una falta.
+
+Artículo 32. Variantes de la flor
+En muchas mesas la flor es opcional: no hay obligación de cantarla y no existe "pido flor". En otras se juega "sin flor": con tres cartas del mismo palo se usan dos para el envido. Antes de barajar, la mesa define si se juega con flor; si la mesa lo acepta, cantarla es obligatorio. Una variante hace valer 30 (en vez de 20 de base) una flor de tres figuras negras.
+
+TÍTULO VII — SEÑAS, CONDUCTA Y FALTAS
+
+Artículo 33. Las señas entre compañeros
+Las señas son gestos con el rostro que se hacen los compañeros para informar sus cartas; son parte del juego y solo se hacen entre compañeros. En el mano a mano no se hace ninguna seña. El set más usado en Argentina: ancho de espadas, levantar las cejas; ancho de bastos, guiñar o cerrar un ojo; 7 de espadas, mover la boca hacia la derecha; 7 de oros, mover la boca hacia la izquierda; cualquier 3, morderse el labio inferior; cualquier 2, tirar un beso; anchos falsos (1 de copas y 1 de oros), abrir la boca; cartas malas, cerrar ambos ojos; buenos puntos de envido, mover la cabeza hacia un lado (según otra fuente, arrugar la nariz).
+
+Artículo 34. Engaño, palabras reservadas y faltas
+El farol es parte del juego: se puede cantar truco o falta envido sin tener cartas y hacer señas falsas para confundir. Cantar un tanto falso al responder un envido, en cambio, es trampa, y no se puede cantar flor sin tenerla. Las palabras de apuesta (truco, retruco, vale cuatro, envido, real envido, falta envido, flor, quiero, no quiero) son fijas y no admiten sustitutos; su uso puede valer como apuesta aunque no se haya querido. Ejemplo: decir "no quiero" refiriéndose a otra cosa cuenta como rechazo. En torneos oficiales y de club, las señas cruzadas entre compañeros de los lados están prohibidas en el juego de seis.
+
+Artículo 35. Maldón
+El maldón es una regla opcional que debe acordarse antes de empezar. Si un jugador recibe dos cuatros y una carta sin seña (un rey o menos), puede pedir maldón: se tira la mano y reparte el siguiente. Algunas mesas lo permiten solo al mano.
+
+TÍTULO VIII — JUEGO DE SEIS Y COSTUMBRES REGIONALES EN ARGENTINA
+
+Artículo 36. Punta y hacha, pica-pica o "de punta"
+En el juego de seis (tres contra tres, sentados alternados) se alternan dos tipos de manos. La "redonda" es la mano normal entre los dos equipos. La "punta y hacha", "pica-pica" o "de punta" son tres partidas de truco de a dos jugadores a la vez, cada uno contra el rival sentado enfrente, y los puntos se suman al equipo. En Buenos Aires, La Pampa y Patagonia se dice "pica-pica" o "punta y hacha"; en Cuyo (Mendoza y San Juan) se dice "jugar de punta" o "mano de punta".
+
+Artículo 37. Cuándo se juega la punta
+La punta se habilita solo cuando ambos equipos están en buenas, o cuando uno está en buenas y el otro en malas; casi nunca se juega desde cero. Cuando un equipo llega a 25 puntos (10 buenas) o más, solo se juega redonda. Esta regla es de uso general, incluso en Mendoza.
+
+Artículo 38. Particularidades de Mendoza y Cuyo
+Se dice que las reglas son las mismas en todo el país, pero en Mendoza hay costumbres. El tanteador se hace con porotos, fósforos, piedras o monedas, en vez de palotes en papel. En las mesas locales el falta envido da al ganador directamente todos los puntos que le faltan para llegar a 30, es decir, el partido completo. En otras zonas se toman los puntos del rival. El "gallo" es una variante histórica de reuniones informales con tres jugadores, cada uno por su cuenta.
+
+TÍTULO IX — TRUCO URUGUAYO
+
+Artículo 39. Qué cambia en Uruguay: la muestra
+El truco uruguayo mantiene los principios de flor, envido y truco, pero se juega con la muestra. Después de repartir tres cartas a cada jugador, se da vuelta la carta siguiente del mazo y se la deja visible: su palo es la muestra. Las cartas del palo de muestra 2, 4, 5, 11 (caballo) y 10 (sota) son "piezas", las más altas del juego. El 3 y el 6 de muestra son cartas comunes. El 12 (rey) de muestra no tiene valor especial, salvo que la carta visible sea una pieza: entonces toma el valor de esa pieza.
+
+Artículo 40. Jerarquía en el truco uruguayo
+Las piezas del palo de muestra superan a las cartas bravas, que en Uruguay se llaman "matas". El 2 de muestra es la carta más alta. Ejemplo con copas de muestra: 2, 4, 5, 11 y 10 de copas, luego 1 de espadas, 1 de bastos, 7 de espadas y 7 de oros, después los 3, y así sucesivamente.
+
+Artículo 41. Flor y envido en Uruguay: valor de las piezas
+Las piezas se pueden usar como si fueran de cualquier palo para flor y envido. Valen: 2 de muestra, 10; 4 de muestra, 9; 5 de muestra, 8; 11 y 10 de muestra, 7 cada una. En Uruguay a veces se dan esos valores sumando los 20 puntos: 30, 29, 28 y 27. Una mano con una pieza tiene al menos un envido de dos cartas: por ejemplo, el 4 de muestra con un 3 y un 6 de palos distintos suma 35 (20 + 9 + 6). Dos cartas del mismo palo más una pieza forman flor, y una mano con dos piezas es flor automáticamente.
+
+Artículo 42. Truco de a tres en Uruguay
+En el juego de tres jugadores, el mano juega solo contra los otros dos, que forman equipo. Para compensar, el mano recibe una cuarta carta y, después de ver la muestra, descarta una boca abajo. Los puntos que anota cualquiera de los dos compañeros se dan a ambos. Los compañeros pueden hacerse señas pero no mostrarse las cartas.
+
+Artículo 43. Señas uruguayas
+2 de muestra, cejas levantadas; 4 de muestra, labios hacia afuera como para un beso; 5 de muestra, olfatear como conejo; 11 de muestra, guiño del ojo derecho; 10 de muestra, guiño del ojo izquierdo; as de espadas o as de bastos, sonrisa hacia la derecha; 7 de espadas o 7 de oros, sonrisa hacia la izquierda; cualquier 3, morderse el labio inferior; cualquier 2, boca abierta un segundo; cartas malas, cerrar ambos ojos.
+
+TÍTULO X — TRUCO EN BRASIL
+
+Artículo 44. Truco paulista
+El truco paulista se juega en equipos de dos, a 12 puntos, con baraja española de 40 cartas sin 8, 9 ni 10 (según una fuente, sin 8, 9 y 10). Cada mano vale 1 punto. Tras repartir se da vuelta una carta, la "vira", y las "manilhas" son las cartas de valor inmediatamente superior a la vira en los cuatro palos; por ejemplo, si la vira es un 7, las manilhas son las damas. Entre las manilhas, de mayor a menor palo: bastos, copas, espadas, oros. Sin manilha, el orden es 3, 2, As, Rey, Sota, Dama, 7, 6, 5, 4.
+
+Artículo 45. Apuestas del truco paulista
+La escalera de apuestas es: truco (3 puntos), seis (6), nove (9) y doze (12, que es el juego). Si el rival no quiere, el que pidió gana el valor anterior: truco no querido, 1 punto; seis no querido, 3; nove no querido, 6. No se puede saltear un escalón.
+
+Artículo 46. Mano de once y mano de ferro en Brasil
+En el truco paulista, cuando un equipo llega a 11 puntos, puede ver las cartas de su compañero y decide si juega la mano de once. Si juega, la mano vale 3 puntos; si no, el rival gana 1 punto. Si se pide truco en una mano de once, el equipo con 11 pierde la ronda. Si ambos llegan a 11, la mano se juega a ciegas ("mão de ferro"). Si un jugador recibe más o menos de tres cartas, el rival gana la ronda si todavía no empezó.
+
+Artículo 47. Truco mineiro
+El truco mineiro (Minas Gerais) es como el paulista, pero cada mano vale 2 puntos y las manilhas son fijas, sin vira. Orden de las manilhas, de mayor a menor: 4 de bastos ("zap"), 7 de copas, as de espadas ("espadilha") y 7 de oros ("pica-fumo"). Después siguen 3, 2, ases, reyes, sotas, damas, 7 de bastos y de espadas, 6, 5 y 4. Se puede jugar sin los 4, 5, 6 y 7 conservando las manilhas.
+
+Artículo 48. Apuestas del truco mineiro
+En el truco mineiro el truco propone 4 puntos (si no se quiere, el que pidió gana 2). Según Wikipedia sigue la propuesta de 8 (no querida: 4) y de 10 (no querida: 8); otras fuentes dan la escalera 4, 8 y 12, así que hay que acordarla. En lugar de la mano de once existe la mano de diez: se juega con 10 puntos, vale 4 puntos, y solo el equipo con 10 puede ver las cartas del compañero. Si ambos llegan a 10, se juega sin ver las cartas.
+
+Artículo 49. Nombres de cartas en Brasil
+En el sur de Brasil se llama "espadão" al as de espadas y "bastião" al as de bastos. En el sudeste de Brasil el 4 de bastos puede llamarse "zap". El truco del sur de Brasil (Rio Grande do Sul) conserva el envido y la flor del truco argentino.
+
+TÍTULO XI — OTROS PAÍSES
+
+Artículo 50. Truco en Paraguay
+En Paraguay las cartas tienen nombres propios: "macho" (as de espadas), "hembra" (as de bastos), "perruchos" (los doses) y "buempes" (los ases falsos). Las reglas de flor y falta envido se acuerdan antes de empezar. No hay información verificada en este reglamento sobre el ranking, los puntos y los cantos específicos paraguayos.
+
+Artículo 51. Truco en Venezuela
+En Venezuela se usa "la vira": la carta superior del mazo tras repartir se deja visible y su palo define a "El Perico" (el caballo de ese palo) y "La Perica" (la sota de ese palo), las dos cartas más altas del juego. Los demás caballos y sotas mantienen su orden normal. No hay información en este reglamento sobre los valores de los cantos ni el puntaje objetivo venezolanos.
+
+Artículo 52. El truc en Cataluña y España
+El truc, base del truco sudamericano, se juega en Cataluña con baraja española de 40 cartas, entre cuatro jugadores en parejas fijas (también de a dos), a 12 puntos. Orden de las cartas, de mayor a menor y sin importar el palo: 3, 2, 1, 12, 11, 10, 7, 6, 5, 4. Gana la mano quien gana dos de tres bazas; si hay empate en una baza gana quien gana la primera de las dos restantes. No existen el envido ni la flor.
+
+Artículo 53. Apuestas del truc catalán
+Cada mano vale inicialmente 1 punto. Cualquier equipo puede proponer "truc" (2 puntos); si se acepta, solo el que aceptó puede subir a "retruc" (3 puntos). Se acepta diciendo "sí" o "quiero" o jugando una carta. Si se rechaza, el que propuso gana el valor anterior. Las apuestas solo se hacen en el turno propio. Con 11 puntos, el equipo decide si juega: si juega la mano vale 3 sin apuestas; si no, el rival gana 1 punto. Las señas opcionales son: cerrar un ojo para un 3, hacer trompa para un 2 y mostrar la punta de la lengua para un as.
+
+Artículo 54. Truc en el sur de Francia
+El truc también se juega, con pequeñas diferencias, en el sur de Francia: Rosellón (Truc), País Vasco (Truka), Poitou (Tru) y Sarthe (Trut). Se juega a 12 puntos con baraja de 36 cartas o de 32 cartas, y las apuestas no tienen límite de tamaño, salvo que el mismo equipo no puede apostar dos veces seguidas.
+
+TÍTULO XII — COMPARACIÓN RÁPIDA
+
+Artículo 55. Qué país usa envido y flor
+Tienen envido y flor: Argentina, Uruguay, el sur de Brasil (truco gaúcho) y Paraguay. No tienen envido ni flor: el truco paulista y mineiro de Brasil (que usan manilhas) y el truc catalán. Venezuela y Uruguay usan una carta visible (vira o muestra) para definir cartas altas.
+
+Artículo 56. Cuántos puntos vale cada truco según el país
+Argentina y Uruguay: se juega a 30 puntos; truco 2, retruco 3, vale cuatro 4. Truco paulista: se juega a 12; truco 3, seis 6, nove 9, doze 12. Truco mineiro: se juega a 12; la mano vale 2 y el truco propone 4. Truc catalán: se juega a 12; truc 2 y retruc 3.

@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>El Viejo del Truco</title>
+<style>
+  :root {
+    --tapete: #14523a; --tapete-osc: #0d3a28; --papel: #f6efdc; --tinta: #2a2118;
+    --oro: #d9a441; --rojo: #b3392f; --gris: #6b6355;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; color: var(--papel);
+    font-family: Georgia, "Times New Roman", serif;
+    background: radial-gradient(ellipse at top, var(--tapete), var(--tapete-osc) 70%) fixed;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 24px 16px 140px; }
+  header { text-align: center; padding: 12px 0 20px; }
+  h1 { margin: 0; font-size: 2rem; letter-spacing: .02em; color: var(--oro); }
+  header p { margin: 6px 0 0; opacity: .85; }
+  .estado { font: .8rem/1.2 system-ui, sans-serif; opacity: .7; margin-top: 8px; }
+
+  .sugerencias { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 8px 0 20px; }
+  .sugerencias button {
+    background: transparent; color: var(--papel); border: 1px solid #ffffff55; border-radius: 999px;
+    padding: 6px 12px; font: .85rem system-ui, sans-serif; cursor: pointer;
+  }
+  .sugerencias button:hover { border-color: var(--oro); color: var(--oro); }
+
+  .msg { margin: 14px 0; display: flex; }
+  .msg.yo { justify-content: flex-end; }
+  .burbuja { max-width: 88%; padding: 12px 16px; border-radius: 14px; line-height: 1.5; }
+  .yo .burbuja { background: var(--oro); color: var(--tinta); border-bottom-right-radius: 4px; }
+  .viejo .burbuja { background: var(--papel); color: var(--tinta); border-bottom-left-radius: 4px; width: 100%; }
+  .viejo.sin .burbuja { border-left: 6px solid var(--rojo); }
+  .viejo .burbuja p { margin: 0; white-space: pre-wrap; }
+
+  .fuentes { margin-top: 12px; display: grid; gap: 8px; }
+  .carta {
+    border: 1px solid #2a211833; border-radius: 8px; background: #fffaf0; padding: 8px 10px;
+    font: .82rem/1.35 system-ui, sans-serif;
+  }
+  .carta summary { cursor: pointer; display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+  .carta .arch { font-weight: 700; }
+  .carta .sim { margin-left: auto; color: var(--gris); font-variant-numeric: tabular-nums; }
+  .carta .texto { margin: 8px 0 0; color: #3d3427; white-space: pre-wrap; }
+  .etiqueta { font: .75rem system-ui, sans-serif; color: var(--rojo); margin-top: 10px; font-weight: 600; }
+
+  details.diag { margin-top: 10px; font: .78rem/1.4 system-ui, sans-serif; color: var(--gris); }
+  details.diag summary { cursor: pointer; }
+  details.diag table { border-collapse: collapse; margin-top: 6px; width: 100%; }
+  details.diag td { padding: 2px 6px; border-top: 1px solid #0001; }
+  .pasa { color: #1d6b3b; font-weight: 700; } .corta { color: var(--rojo); font-weight: 700; }
+
+  form {
+    position: fixed; left: 0; right: 0; bottom: 0; padding: 12px 16px 18px;
+    background: linear-gradient(transparent, var(--tapete-osc) 40%);
+  }
+  .fila { max-width: 760px; margin: 0 auto; display: flex; gap: 8px; }
+  input {
+    flex: 1; padding: 13px 16px; border-radius: 999px; border: 2px solid transparent;
+    font: 1rem Georgia, serif; background: var(--papel); color: var(--tinta);
+  }
+  input:focus { outline: none; border-color: var(--oro); }
+  .fila button {
+    padding: 0 22px; border: 0; border-radius: 999px; background: var(--oro); color: var(--tinta);
+    font: 700 1rem Georgia, serif; cursor: pointer;
+  }
+  .fila button:disabled { opacity: .5; cursor: wait; }
+  .pensando { opacity: .8; font-style: italic; }
+  @media (max-width: 480px) { h1 { font-size: 1.6rem; } .burbuja { max-width: 100%; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>♠ El Viejo del Truco ♣</h1>
+    <p>Preguntale al reglamento. Si no está escrito, te lo dice.</p>
+    <div class="estado" id="estado">conectando…</div>
+  </header>
+  <div class="sugerencias" id="sugerencias"></div>
+  <div id="chat" aria-live="polite"></div>
+</main>
+
+<form id="form" autocomplete="off">
+  <div class="fila">
+    <input id="q" maxlength="500" placeholder="Ej: ¿qué gano si el otro no quiere el truco?" aria-label="Tu pregunta" required>
+    <button id="enviar">Preguntar</button>
+  </div>
+</form>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const chat = $('chat'), form = $('form'), q = $('q'), enviar = $('enviar');
+
+const EJEMPLOS = [
+  '¿Cuántos puntos gano si el otro no quiere el truco?',
+  '¿Qué carta es la más fuerte?',
+  '¿Puedo guiñarle el ojo a mi compañero?',
+  '¿Quién gana si empatamos el envido?',
+  '¿Cuánto cuesta un mazo?',
+];
+for (const e of EJEMPLOS) {
+  const b = document.createElement('button');
+  b.type = 'button'; b.textContent = e;
+  b.onclick = () => { q.value = e; form.requestSubmit(); };
+  $('sugerencias').append(b);
+}
+
+fetch('/api/estado').then((r) => r.json()).then((s) => {
+  if (s.error) throw new Error(s.error);
+  $('estado').textContent = `${s.fragmentos} fragmentos en Postgres · umbral ${s.umbral} · top-${s.k} · ${s.modelo}`;
+}).catch(() => { $('estado').textContent = 'sin conexión con el servidor o la base'; });
+
+function el(tag, clase, texto) {
+  const e = document.createElement(tag);
+  if (clase) e.className = clase;
+  if (texto != null) e.textContent = texto;
+  return e;
+}
+
+function carta(f) {
+  const d = el('details', 'carta');
+  const s = el('summary');
+  s.append(el('span', 'arch', `${f.archivo} · Artículo ${f.articulo}`), el('span', null, f.nombre), el('span', 'sim', `similitud ${f.similitud.toFixed(3)}`));
+  d.append(s, el('p', 'texto', f.texto));
+  return d;
+}
+
+function diagnostico(r) {
+  const d = el('details', 'diag');
+  d.append(el('summary', null, 'Diagnóstico: qué recuperó la búsqueda'));
+  const t = el('table');
+  for (const f of r.candidatos) {
+    const tr = el('tr');
+    const pasa = f.similitud >= r.umbral;
+    tr.append(el('td', null, `Art. ${f.articulo} · ${f.nombre}`), el('td', null, f.similitud.toFixed(3)), el('td', pasa ? 'pasa' : 'corta', pasa ? 'pasa el umbral' : `< ${r.umbral}`));
+    t.append(tr);
+  }
+  d.append(t);
+  return d;
+}
+
+function respuestaDelViejo(r) {
+  const sin = r.fuentes.length === 0;
+  const m = el('div', 'msg viejo' + (sin ? ' sin' : ''));
+  const b = el('div', 'burbuja');
+  b.append(el('p', null, r.respuesta));
+  if (sin) {
+    b.append(el('div', 'etiqueta', r.motivo === 'umbral'
+      ? 'Ningún fragmento superó el umbral: ni se consultó al modelo.'
+      : 'Se recuperaron fragmentos, pero el modelo indicó que no contienen la respuesta.'));
+  } else {
+    const fu = el('div', 'fuentes');
+    r.fuentes.forEach((f) => fu.append(carta(f)));
+    b.append(fu);
+  }
+  b.append(diagnostico(r));
+  m.append(b);
+  return m;
+}
+
+form.addEventListener('submit', async (ev) => {
+  ev.preventDefault();
+  const pregunta = q.value.trim();
+  if (!pregunta) return;
+  q.value = ''; enviar.disabled = true;
+
+  const yo = el('div', 'msg yo'); yo.append(el('div', 'burbuja', pregunta)); chat.append(yo);
+  const espera = el('div', 'msg viejo'); const eb = el('div', 'burbuja'); eb.append(el('p', 'pensando', 'Mirando el reglamento…')); espera.append(eb); chat.append(espera);
+  espera.scrollIntoView({ behavior: 'smooth', block: 'end' });
+
+  try {
+    const res = await fetch('/api/preguntar', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ pregunta }) });
+    const r = await res.json();
+    if (!res.ok) throw new Error(r.error || 'Error del servidor');
+    espera.replaceWith(respuestaDelViejo(r));
+  } catch (e) {
+    eb.replaceChildren(el('p', null, 'No pude responder: ' + e.message));
+    espera.classList.add('sin');
+  } finally {
+    enviar.disabled = false; q.focus();
+    chat.lastElementChild.scrollIntoView({ behavior: 'smooth', block: 'end' });
+  }
+});
+</script>
+</body>
+</html>
