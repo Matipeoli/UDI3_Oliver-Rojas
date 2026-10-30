@@ -28,18 +28,24 @@ export async function generar(pregunta, fragmentos) {
   const { sistema, usuario } = armarPrompt(pregunta, fragmentos);
 
   // La clave viaja en un header desde el servidor: nunca llega al navegador.
-  const res = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/${config.genModel}:generateContent`,
-    {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'x-goog-api-key': config.geminiKey },
-      body: JSON.stringify({
-        systemInstruction: { parts: [{ text: sistema }] },
-        contents: [{ role: 'user', parts: [{ text: usuario }] }],
-        generationConfig: { temperature: 0.2 },
-      }),
-    },
-  );
+  // 503/429 son picos de demanda de Gemini: reintentamos con espera creciente.
+  let res;
+  for (let intento = 0; intento < 4; intento++) {
+    res = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/${config.genModel}:generateContent`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'x-goog-api-key': config.geminiKey },
+        body: JSON.stringify({
+          systemInstruction: { parts: [{ text: sistema }] },
+          contents: [{ role: 'user', parts: [{ text: usuario }] }],
+          generationConfig: { temperature: 0.2 },
+        }),
+      },
+    );
+    if (res.status !== 503 && res.status !== 429) break;
+    await new Promise((r) => setTimeout(r, 1000 * 2 ** intento));
+  }
   if (!res.ok) throw new Error(`Gemini respondió ${res.status}: ${await res.text()}`);
   const data = await res.json();
   const texto = data.candidates?.[0]?.content?.parts?.map((p) => p.text).join('').trim();
