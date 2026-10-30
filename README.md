@@ -13,6 +13,3 @@ Postgres + pgvector, embeddings locales (bge-m3 vía Ollama), generación con Ge
 
 `npm test` corre pruebas que no necesitan nada de lo anterior.
 
-## Cambiar el corpus
-
-Poné tus `.txt` en `corpus/` y usá el mismo formato (`TÍTULO IV — ...` y `Artículo N. Nombre`), o adaptá las dos expresiones regulares de `src/trocear.mjs` a la estructura de tu documento. Después: `npm run indexar` y recalibrar el umbral. También hay que editar las preguntas de `scripts/calibrar.mjs` y la línea de Rol del prompt en `src/generar.mjs`.
