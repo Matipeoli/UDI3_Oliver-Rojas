@@ -82,13 +82,39 @@ SELECT ..., 1 - (embedding <=> $1) AS similitud
 
 `scripts/calibrar.mjs` mide la similitud del mejor fragmento para preguntas que **sí** están y que **no** están, sin llamar a Gemini, y las ordena en una recta. Si las dos nubes no se superponen, sugiere el punto medio; si se superponen, no existe corte perfecto y hay que elegir qué error cometer.
 
-> **Completar antes de exponer:** corré `npm run calibrar`, pegá acá los números reales y el `UMBRAL` que elegiste y por qué.
->
-> | Pregunta | Sí/No está | Similitud |
-> |---|---|---|
-> | … | … | … |
->
-> Umbral elegido: `____`
+Resultado real de `npm run calibrar` (10 preguntas que sí están, 6 que no; similitud del mejor fragmento):
+
+| Pregunta | ¿Está? | Mejor fragmento | Similitud |
+|---|---|---|---|
+| ¿Cuánto cuesta un mazo de cartas? | No | Art. 3 | 0.636 |
+| ¿Cómo se juega al truco en Chile? | No | Art. 1 | 0.634 |
+| ¿Cómo se juega al póker? | No | Art. 9 | 0.558 |
+| ¿Quién inventó el truco? | No | Art. 1 | 0.553 |
+| ¿A qué hora abre el club? | No | Art. 37 | 0.448 |
+| ¿Cuál es la capital de Francia? | No | Art. 54 | 0.421 |
+| ¿Qué carta es la más fuerte? | Sí | Art. 8 | 0.587 |
+| ¿Qué pasa si las tres manos quedan empatadas? | Sí | Art. 25 | 0.597 |
+| ¿Cuántos puntos gano si el otro no quiere el truco? | Sí | Art. 13 | 0.671 |
+| ¿Cómo funciona la muestra en Uruguay? | Sí | Art. 39 | 0.683 |
+| ¿Cuántos puntos tiene la mejor flor? | Sí | Art. 28 | 0.721 |
+| ¿Qué son las manilhas en el truco brasileño? | Sí | Art. 47 | 0.721 |
+| ¿Quién gana si hay empate en el envido? | Sí | Art. 25 | 0.730 |
+| ¿Puedo hacerle señas a mi compañero? | Sí | Art. 33 | 0.731 |
+| ¿Cuándo se puede cantar envido? | Sí | Art. 19 | 0.743 |
+| ¿A cuántos puntos se juega el truc catalán? | Sí | Art. 53 | 0.752 |
+
+**Las nubes se superponen:** la más baja de las que sí están (0.587) queda por debajo de la más alta de las que no (0.636). No existe un umbral que separe todo.
+
+**Decisión: `UMBRAL=0.57`.** Queda en el hueco entre 0.558 (póker) y 0.587 (carta más fuerte):
+- Pasan las 10 preguntas legítimas (cero falsos negativos).
+- Se cortan antes del modelo las claramente ajenas (póker, inventor, club, Francia).
+- Pasan dos casi-aciertos ("mazo" y "Chile"): ahí actúa la segunda barrera, el prompt, que obliga a responder "El reglamento no lo especifica." o a decir que el país no está cubierto.
+
+**Por qué prefiero ese error:** un falso negativo (negarle una respuesta que sí existe) es una falla silenciosa que el usuario no puede corregir; un falso positivo todavía tiene el prompt como red. Subir a 0.64 cortaría "mazo" y "Chile" pero perdería preguntas legítimas.
+
+**Límite honesto:** son solo 16 preguntas y el margen (0.558 vs 0.587) es de 0.03. Con un set más grande habría que recalibrar.
+
+> Umbral elegido: `0.57`
 
 ## 8. Paso 7 — El prompt: la segunda barrera (`src/generar.mjs`)
 
