@@ -7,57 +7,131 @@
 <style>
   :root {
     --tapete: #14523a; --tapete-osc: #0d3a28; --papel: #f6efdc; --tinta: #2a2118;
-    --oro: #d9a441; --rojo: #b3392f; --gris: #6b6355;
+    --oro: #d9a441; --rojo: #b3392f; --gris: #6b6355; --carta: #fffaf0;
   }
   * { box-sizing: border-box; }
   body {
     margin: 0; min-height: 100vh; color: var(--papel);
     font-family: Georgia, "Times New Roman", serif;
-    background: radial-gradient(ellipse at top, var(--tapete), var(--tapete-osc) 70%) fixed;
+    background:
+      repeating-radial-gradient(circle at 20% 10%, #ffffff06 0 2px, transparent 2px 6px),
+      radial-gradient(ellipse at top, var(--tapete), var(--tapete-osc) 70%) fixed;
   }
-  main { max-width: 760px; margin: 0 auto; padding: 24px 16px 140px; }
+  main { max-width: 800px; margin: 0 auto; padding: 24px 16px 150px; }
   header { text-align: center; padding: 12px 0 20px; }
-  h1 { margin: 0; font-size: 2rem; letter-spacing: .02em; color: var(--oro); }
+  h1 { margin: 0; font-size: 2.1rem; letter-spacing: .02em; color: var(--oro); text-shadow: 0 2px 0 #0006; }
   header p { margin: 6px 0 0; opacity: .85; }
+  .palos { letter-spacing: .5em; font-size: 1.1rem; margin-top: 6px; opacity: .8; }
   .estado { font: .8rem/1.2 system-ui, sans-serif; opacity: .7; margin-top: 8px; }
 
   .sugerencias { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 8px 0 20px; }
   .sugerencias button {
-    background: transparent; color: var(--papel); border: 1px solid #ffffff55; border-radius: 999px;
-    padding: 6px 12px; font: .85rem system-ui, sans-serif; cursor: pointer;
+    background: #00000022; color: var(--papel); border: 1px solid #ffffff55; border-radius: 999px;
+    padding: 6px 12px; font: .85rem system-ui, sans-serif; cursor: pointer; transition: transform .15s;
   }
-  .sugerencias button:hover { border-color: var(--oro); color: var(--oro); }
+  .sugerencias button:hover { border-color: var(--oro); color: var(--oro); transform: translateY(-2px); }
 
-  .msg { margin: 14px 0; display: flex; }
+  /* mensajes */
+  .msg { margin: 22px 0; display: flex; }
   .msg.yo { justify-content: flex-end; }
-  .burbuja { max-width: 88%; padding: 12px 16px; border-radius: 14px; line-height: 1.5; }
-  .yo .burbuja { background: var(--oro); color: var(--tinta); border-bottom-right-radius: 4px; }
-  .viejo .burbuja { background: var(--papel); color: var(--tinta); border-bottom-left-radius: 4px; width: 100%; }
-  .viejo.sin .burbuja { border-left: 6px solid var(--rojo); }
-  .viejo .burbuja p { margin: 0; white-space: pre-wrap; }
-
-  .fuentes { margin-top: 12px; display: grid; gap: 8px; }
-  .carta {
-    border: 1px solid #2a211833; border-radius: 8px; background: #fffaf0; padding: 8px 10px;
-    font: .82rem/1.35 system-ui, sans-serif;
+  .burbuja { max-width: 88%; padding: 10px 16px; border-radius: 14px; line-height: 1.5; }
+  .yo .burbuja {
+    background: var(--oro); color: var(--tinta); border-bottom-right-radius: 4px;
+    box-shadow: 0 4px 10px #0005; animation: repartir .35s ease-out both;
   }
-  .carta summary { cursor: pointer; display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
-  .carta .arch { font-weight: 700; }
-  .carta .sim { margin-left: auto; color: var(--gris); font-variant-numeric: tabular-nums; }
-  .carta .texto { margin: 8px 0 0; color: #3d3427; white-space: pre-wrap; }
-  .etiqueta { font: .75rem system-ui, sans-serif; color: var(--rojo); margin-top: 10px; font-weight: 600; }
+  .viejo { display: block; }
 
-  details.diag { margin-top: 10px; font: .78rem/1.4 system-ui, sans-serif; color: var(--gris); }
+  /* la carta grande: la respuesta */
+  .naipe {
+    --palo: var(--tinta);
+    position: relative; background: var(--carta); color: var(--tinta);
+    border: 2px solid var(--tinta); border-radius: 18px;
+    box-shadow: 0 14px 30px #0009, inset 0 0 0 7px var(--carta), inset 0 0 0 8px var(--palo);
+    animation: repartir .55s cubic-bezier(.2, .8, .3, 1) both;
+    overflow: hidden;
+  }
+  .naipe::before { /* marca de agua del palo */
+    content: attr(data-palo); position: absolute; inset: 0; display: grid; place-items: center;
+    font-size: 14rem; color: var(--palo); opacity: .06; pointer-events: none;
+  }
+  .esq {
+    position: absolute; display: flex; flex-direction: column; align-items: center; line-height: 1;
+    color: var(--palo); font-weight: 700; z-index: 1;
+  }
+  .esq b { font-size: 1.7rem; }
+  .esq span { font-size: 1.5rem; margin-top: 2px; }
+  .esq.tl { top: 16px; left: 18px; }
+  .esq.br { bottom: 16px; right: 18px; transform: rotate(180deg); }
+  .cuerpo { position: relative; z-index: 1; padding: 26px 66px 30px; }
+  .nombre-palo { font: 700 .72rem system-ui, sans-serif; letter-spacing: .18em; text-transform: uppercase; color: var(--palo); margin-bottom: 10px; }
+  .cuerpo .resp { margin: 0; font-size: 1.12rem; line-height: 1.55; white-space: pre-wrap; }
+  .etiqueta { font: .78rem/1.35 system-ui, sans-serif; color: var(--rojo); margin-top: 14px; font-weight: 600; }
+
+  /* carta boca abajo: no hay respuesta en el reglamento */
+  .naipe.sin {
+    --palo: var(--rojo); animation: repartir .55s cubic-bezier(.2, .8, .3, 1) both, sacudir .5s .55s;
+    background:
+      repeating-linear-gradient(45deg, #b3392f22 0 8px, transparent 8px 16px),
+      repeating-linear-gradient(-45deg, #b3392f22 0 8px, transparent 8px 16px), var(--carta);
+  }
+  .naipe.sin::before { content: "✕"; font-size: 12rem; opacity: .07; }
+  .sello {
+    display: inline-block; font: 800 .72rem system-ui, sans-serif; letter-spacing: .2em;
+    color: var(--rojo); border: 2px solid var(--rojo); border-radius: 6px; padding: 3px 8px;
+    transform: rotate(-4deg); margin-bottom: 12px;
+  }
+
+  /* las fuentes: cartitas que se dan vuelta */
+  .rotulo { font: 700 .72rem system-ui, sans-serif; letter-spacing: .16em; text-transform: uppercase; color: var(--gris); margin: 20px 0 10px; }
+  .mano { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; }
+  .mini { --palo: var(--tinta); perspective: 900px; height: 250px; cursor: pointer; outline: none; animation: repartir .5s cubic-bezier(.2, .8, .3, 1) both; }
+  .mini:hover .mini-in { transform: translateY(-6px) rotate(-1deg); }
+  .mini.vuelta:hover .mini-in { transform: rotateY(180deg) translateY(-6px); }
+  .mini:focus-visible .cara { box-shadow: 0 0 0 3px var(--oro); }
+  .mini-in { position: relative; width: 100%; height: 100%; transition: transform .6s cubic-bezier(.3, .7, .3, 1); transform-style: preserve-3d; }
+  .mini.vuelta .mini-in { transform: rotateY(180deg); }
+  .cara, .dorso {
+    position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+    background: var(--carta); color: var(--tinta); border: 2px solid var(--tinta); border-radius: 14px;
+    box-shadow: 0 10px 20px #0008, inset 0 0 0 5px var(--carta), inset 0 0 0 6px var(--palo);
+  }
+  .cara { padding: 14px; display: flex; flex-direction: column; }
+  .cara .esq.tl { top: 12px; left: 14px; } .cara .esq b { font-size: 1.3rem; } .cara .esq span { font-size: 1.15rem; }
+  .cara .centro { margin: 30px 0 0; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 4px; }
+  .cara .art { font: 700 .72rem system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--palo); }
+  .cara .tit { font-size: 1rem; line-height: 1.25; font-weight: 700; }
+  .cara .arch { font: .72rem system-ui, sans-serif; color: var(--gris); }
+  .medidor { margin-top: 8px; font: .72rem system-ui, sans-serif; color: var(--gris); }
+  .barra { position: relative; height: 7px; border-radius: 99px; background: #0002; margin: 5px 0 3px; }
+  .barra i { position: absolute; inset: 0 auto 0 0; border-radius: 99px; background: var(--palo); }
+  .barra u { position: absolute; top: -3px; bottom: -3px; width: 2px; background: var(--tinta); }
+  .medidor .num { display: flex; justify-content: space-between; font-variant-numeric: tabular-nums; }
+  .dorso { transform: rotateY(180deg); padding: 14px 14px 10px; display: flex; flex-direction: column; }
+  .dorso h4 { margin: 0 0 6px; font: 700 .72rem system-ui, sans-serif; letter-spacing: .1em; text-transform: uppercase; color: var(--palo); }
+  .dorso .txt { margin: 0; overflow: auto; font-size: .84rem; line-height: 1.4; white-space: pre-wrap; flex: 1; padding-right: 4px; }
+  .dorso .volver { font: .68rem system-ui, sans-serif; color: var(--gris); margin-top: 6px; text-align: center; }
+
+  details.diag { margin-top: 18px; font: .78rem/1.4 system-ui, sans-serif; color: var(--gris); position: relative; z-index: 1; }
   details.diag summary { cursor: pointer; }
   details.diag table { border-collapse: collapse; margin-top: 6px; width: 100%; }
-  details.diag td { padding: 2px 6px; border-top: 1px solid #0001; }
+  details.diag td { padding: 3px 6px; border-top: 1px solid #0002; }
   .pasa { color: #1d6b3b; font-weight: 700; } .corta { color: var(--rojo); font-weight: 700; }
+
+  /* repartiendo mientras piensa */
+  .barajando { display: flex; align-items: center; gap: 14px; opacity: .9; font-style: italic; }
+  .pila { position: relative; width: 44px; height: 60px; }
+  .pila i {
+    position: absolute; inset: 0; border-radius: 6px; border: 2px solid var(--papel);
+    background: repeating-linear-gradient(45deg, #b3392f 0 4px, #8f2a22 4px 8px);
+    animation: barajar 1s ease-in-out infinite;
+  }
+  .pila i:nth-child(2) { animation-delay: .15s; } .pila i:nth-child(3) { animation-delay: .3s; }
 
   form {
     position: fixed; left: 0; right: 0; bottom: 0; padding: 12px 16px 18px;
     background: linear-gradient(transparent, var(--tapete-osc) 40%);
   }
-  .fila { max-width: 760px; margin: 0 auto; display: flex; gap: 8px; }
+  .fila { max-width: 800px; margin: 0 auto; display: flex; gap: 8px; }
   input {
     flex: 1; padding: 13px 16px; border-radius: 999px; border: 2px solid transparent;
     font: 1rem Georgia, serif; background: var(--papel); color: var(--tinta);
@@ -68,14 +142,23 @@
     font: 700 1rem Georgia, serif; cursor: pointer;
   }
   .fila button:disabled { opacity: .5; cursor: wait; }
-  .pensando { opacity: .8; font-style: italic; }
-  @media (max-width: 480px) { h1 { font-size: 1.6rem; } .burbuja { max-width: 100%; } }
+
+  @keyframes repartir { from { opacity: 0; transform: translate(-30px, -50px) rotate(-8deg) scale(.88); } to { opacity: 1; transform: none; } }
+  @keyframes sacudir { 0%, 100% { transform: none; } 25% { transform: translateX(-7px) rotate(-.6deg); } 75% { transform: translateX(7px) rotate(.6deg); } }
+  @keyframes barajar { 0%, 100% { transform: translate(0, 0) rotate(0); } 50% { transform: translate(14px, -8px) rotate(10deg); } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+  @media (max-width: 520px) {
+    h1 { font-size: 1.6rem; } .burbuja { max-width: 100%; }
+    .cuerpo { padding: 22px 46px 26px; } .naipe::before { font-size: 9rem; }
+    .esq.tl { top: 12px; left: 12px; } .esq.br { bottom: 12px; right: 12px; } .esq b { font-size: 1.3rem; }
+  }
 </style>
 </head>
 <body>
 <main>
   <header>
     <h1>♠ El Viejo del Truco ♣</h1>
+    <div class="palos" aria-hidden="true">♠ ♥ ♦ ♣</div>
     <p>Preguntale al reglamento. Si no está escrito, te lo dice.</p>
     <div class="estado" id="estado">conectando…</div>
   </header>
@@ -120,12 +203,53 @@ function el(tag, clase, texto) {
   return e;
 }
 
-function carta(f) {
-  const d = el('details', 'carta');
-  const s = el('summary');
-  s.append(el('span', 'arch', `${f.archivo} · Artículo ${f.articulo}`), el('span', null, f.nombre), el('span', 'sim', `similitud ${f.similitud.toFixed(3)}`));
-  d.append(s, el('p', 'texto', f.texto));
-  return d;
+// Cada artículo "cae" en un palo según su número, como una carta repartida.
+const PALOS = [
+  { s: '♠', n: 'Espadas', c: '#1f3a6b' },
+  { s: '♣', n: 'Bastos', c: '#1d6b3b' },
+  { s: '♦', n: 'Oros', c: '#a8740a' },
+  { s: '♥', n: 'Copas', c: '#b3392f' },
+];
+const palo = (n) => PALOS[n % 4];
+
+function esquinas(numero, p) {
+  const tl = el('div', 'esq tl'); tl.append(el('b', null, String(numero)), el('span', null, p.s));
+  const br = el('div', 'esq br'); br.append(el('b', null, String(numero)), el('span', null, p.s));
+  return [tl, br];
+}
+
+// Cartita de fuente: de frente muestra artículo y similitud; dada vuelta, el texto del reglamento.
+function carta(f, umbral, i) {
+  const p = palo(f.articulo);
+  const m = el('div', 'mini');
+  m.style.setProperty('--palo', p.c);
+  m.style.animationDelay = `${0.25 + i * 0.12}s`;
+  m.tabIndex = 0; m.setAttribute('role', 'button'); m.setAttribute('aria-pressed', 'false');
+  m.setAttribute('aria-label', `Artículo ${f.articulo}: ${f.nombre}. Tocá para ver el texto`);
+
+  const inn = el('div', 'mini-in');
+  const cara = el('div', 'cara');
+  cara.append(...esquinas(f.articulo, p));
+  const centro = el('div', 'centro');
+  centro.append(el('div', 'art', `${p.n} · Artículo ${f.articulo}`), el('div', 'tit', f.nombre), el('div', 'arch', f.archivo));
+  const med = el('div', 'medidor');
+  const barra = el('div', 'barra');
+  const lleno = el('i'); lleno.style.width = `${Math.min(100, Math.max(0, f.similitud * 100))}%`;
+  const marca = el('u'); marca.style.left = `${umbral * 100}%`; marca.title = `umbral ${umbral}`;
+  barra.append(lleno, marca);
+  const num = el('div', 'num'); num.append(el('span', null, `similitud ${f.similitud.toFixed(3)}`), el('span', null, `umbral ${umbral}`));
+  med.append(barra, num);
+  cara.append(centro, med);
+
+  const dorso = el('div', 'dorso');
+  dorso.append(el('h4', null, `${f.archivo} · Artículo ${f.articulo}`), el('p', 'txt', f.texto), el('div', 'volver', 'tocá para dar vuelta'));
+  inn.append(cara, dorso);
+  m.append(inn);
+
+  const alternar = () => { m.classList.toggle('vuelta'); m.setAttribute('aria-pressed', m.classList.contains('vuelta')); };
+  m.addEventListener('click', alternar);
+  m.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); alternar(); } });
+  return m;
 }
 
 function diagnostico(r) {
@@ -144,21 +268,49 @@ function diagnostico(r) {
 
 function respuestaDelViejo(r) {
   const sin = r.fuentes.length === 0;
-  const m = el('div', 'msg viejo' + (sin ? ' sin' : ''));
-  const b = el('div', 'burbuja');
-  b.append(el('p', null, r.respuesta));
+  const m = el('div', 'msg viejo');
+  const wrap = el('div');
+
+  const mejor = sin ? null : r.fuentes[0];
+  const p = mejor ? palo(mejor.articulo) : PALOS[3];
+  const n = el('div', 'naipe' + (sin ? ' sin' : ''));
+  n.dataset.palo = sin ? '✕' : p.s;
+  n.style.setProperty('--palo', sin ? '#b3392f' : p.c);
+  n.append(...esquinas(sin ? '?' : mejor.articulo, sin ? { s: '✕' } : p));
+
+  const c = el('div', 'cuerpo');
   if (sin) {
-    b.append(el('div', 'etiqueta', r.motivo === 'umbral'
+    c.append(el('span', 'sello', 'NO ESTÁ EN EL MAZO'));
+  } else {
+    c.append(el('div', 'nombre-palo', `${p.n} · ${mejor.nombre}`));
+  }
+  c.append(el('p', 'resp', r.respuesta));
+  if (sin) {
+    c.append(el('div', 'etiqueta', r.motivo === 'umbral'
       ? 'Ningún fragmento superó el umbral: ni se consultó al modelo.'
       : 'Se recuperaron fragmentos, pero el modelo indicó que no contienen la respuesta.'));
-  } else {
-    const fu = el('div', 'fuentes');
-    r.fuentes.forEach((f) => fu.append(carta(f)));
-    b.append(fu);
   }
-  b.append(diagnostico(r));
-  m.append(b);
+  c.append(diagnostico(r));
+  n.append(c);
+  wrap.append(n);
+
+  if (!sin) {
+    wrap.append(el('div', 'rotulo', `Tu mano · ${r.fuentes.length} ${r.fuentes.length === 1 ? 'fuente' : 'fuentes'} (tocá una carta para dar vuelta)`));
+    const mano = el('div', 'mano');
+    r.fuentes.forEach((f, i) => mano.append(carta(f, r.umbral, i)));
+    wrap.append(mano);
+  }
+  m.append(wrap);
   return m;
+}
+
+function pensando() {
+  const espera = el('div', 'msg viejo');
+  const b = el('div', 'barajando');
+  const pila = el('div', 'pila'); pila.append(el('i'), el('i'), el('i'));
+  b.append(pila, el('span', null, 'Barajando el reglamento…'));
+  espera.append(b);
+  return espera;
 }
 
 form.addEventListener('submit', async (ev) => {
@@ -168,7 +320,7 @@ form.addEventListener('submit', async (ev) => {
   q.value = ''; enviar.disabled = true;
 
   const yo = el('div', 'msg yo'); yo.append(el('div', 'burbuja', pregunta)); chat.append(yo);
-  const espera = el('div', 'msg viejo'); const eb = el('div', 'burbuja'); eb.append(el('p', 'pensando', 'Mirando el reglamento…')); espera.append(eb); chat.append(espera);
+  const espera = pensando(); chat.append(espera);
   espera.scrollIntoView({ behavior: 'smooth', block: 'end' });
 
   try {
@@ -177,8 +329,12 @@ form.addEventListener('submit', async (ev) => {
     if (!res.ok) throw new Error(r.error || 'Error del servidor');
     espera.replaceWith(respuestaDelViejo(r));
   } catch (e) {
-    eb.replaceChildren(el('p', null, 'No pude responder: ' + e.message));
-    espera.classList.add('sin');
+    const err = el('div', 'msg viejo');
+    const n = el('div', 'naipe sin'); n.dataset.palo = '✕';
+    const c = el('div', 'cuerpo');
+    c.append(el('span', 'sello', 'CARTA QUEMADA'), el('p', 'resp', 'No pude responder: ' + e.message));
+    n.append(c); err.append(n);
+    espera.replaceWith(err);
   } finally {
     enviar.disabled = false; q.focus();
     chat.lastElementChild.scrollIntoView({ behavior: 'smooth', block: 'end' });
